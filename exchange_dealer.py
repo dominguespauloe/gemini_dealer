@@ -17,12 +17,11 @@ from vertexai.generative_models import GenerativeModel
 # --- CONFIGURAÇÃO DA API GEMINI ---
 # NOTA: A chave da API é deixada em branco, assumindo que será fornecida pelo ambiente (Google Cloud).
 API_KEY = ""
-#MODEL_NAME = "gemini-2.5-flash-preview-09-2025"
-PROJECT_ID = "bigdata-staging"
+PROJECT_ID = "your-project"
 MODEL_NAME = "gemini-2.5-flash"
 
 # Credenciais via JSON
-credentials = service_account.Credentials.from_service_account_file( "bigdata-staging-vertexai-d12b90113f4b.json" )
+credentials = service_account.Credentials.from_service_account_file( "your-project-service-account-vertexai.json" )
 
 
 # As margens de lucro são internas ao pipeline e não são visíveis ao cliente.
@@ -32,7 +31,7 @@ BANK_MIN_ACCEPTABLE_MARGIN = 0.008 # 0.8% margem mínima aceitável
 
 # --- DADOS DE CONTEXTO DO CLIENTE (Mock Data) ---
 CUSTOMER_PROFILE = {
-    "profile_name": "Mr. Gonzalo Ruiz-Oriol",
+    "profile_name": "Client 1",
     "activity_level": "Alto (High)",
     "current_volume_usd": 50000.00,
     "current_commission_tier": "0.15%",
