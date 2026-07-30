@@ -1,0 +1,6 @@
+
+gcloud builds submit --tag gcr.io/bigdata-staging/dealer_ai
+
+kubectl create deployment dealer-ai   --image=gcr.io/bigdata-staging/dealer_ai
+
+kubectl expose deployment dealer-ai  --type=LoadBalancer  --port=8080 
