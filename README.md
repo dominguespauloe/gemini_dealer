@@ -5,7 +5,9 @@ O sistema atua como um Operador de Câmbio virtual (Dealer) que negocia taxas de
 
 
 ------------------------------
-## Componentes Principais do Código## 1. Extração  das taxas oficiais de fechamento e abertura do dólar e de outras 8 moedas estrangeiras.
+## Componentes Principais do Código
+
+## 1. Extração  das taxas oficiais de fechamento e abertura do dólar e de outras 8 moedas estrangeiras.
 
 * Captura via API PTAX: As funções get_cotacoes e tratamento_bacen fazem requisições diretamente à API Olinda do BACEN para extrair as taxas oficiais de fechamento e abertura do dólar e de outras 8 moedas estrangeiras.
 * Tratamento e Otimização: Filtra duplicatas, padroniza nomes de colunas, injeta metadados de engenharia de dados (como o horário de inserção) e utiliza o decorador @st.cache_data do Streamlit para reter os dados em memória e evitar chamadas excessivas e lentas à API pública.
